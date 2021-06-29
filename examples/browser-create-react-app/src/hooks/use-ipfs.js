@@ -11,16 +11,16 @@ import dotProp from 'dot-prop'
 export default function useIpfs (ipfs, cmd, opts) {
   const [res, setRes] = useState(null)
   useEffect(() => {
-    callIpfs(ipfs, cmd, opts, setRes)
+    callIpfs(ipfs, cmd, setRes, opts)
   }, [ipfs, cmd, opts])
   return res
 }
 
-async function callIpfs (ipfs, cmd, opts, setRes) {
+async function callIpfs (ipfs, cmd, setRes, ...opts) {
   if (!ipfs) return null
   console.log(`Call ipfs.${cmd}`)
   const ipfsCmd = dotProp.get(ipfs, cmd)
-  const res = await ipfsCmd(opts)
+  const res = await ipfsCmd(...opts)
   console.log(`Result ipfs.${cmd}`, res)
   setRes(res)
 }
