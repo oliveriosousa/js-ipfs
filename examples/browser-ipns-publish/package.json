@@ -6,9 +6,10 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf ./dist ./.cache ./.parcel-cache",
-    "build": "parcel build index.html --no-scope-hoist",
-    "start": "parcel index.html",
-    "test": "test-ipfs-example"
+    "test": "test-ipfs-example",
+    "build": "parcel build public/index.html --dist-dir ./dist",
+    "serve": "parcel serve public/index.html",
+    "start": "npm run serve"
   },
   "author": "Doug Anderson",
   "license": "MIT",
