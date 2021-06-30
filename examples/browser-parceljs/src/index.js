@@ -36,4 +36,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   log(`The contents of the file was: ${uint8ArrayToString(uint8ArrayConcat(buffers))}`)
+
+  output.insertAdjacentHTML("afterend",
+    `<div>Check the content using the IPFS: <a target="_blank" href="https://ipfs.io/ipfs/${entry.cid}">${entry.cid}</a></div>`
+  );
 })

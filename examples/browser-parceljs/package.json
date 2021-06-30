@@ -10,7 +10,8 @@
   "scripts": {
     "clean": "rimraf ./dist ./.cache ./.parcel-cache",
     "lint": "standard public/**/*.js",
-    "start": "parcel public/index.html",
+    "serve": "parcel serve public/index.html",
+    "start": "npm run serve",
     "build": "parcel build public/index.html --no-scope-hoist",
     "test": "test-ipfs-example"
   },
@@ -21,7 +22,7 @@
     "ipfs": "^0.55.4"
   },
   "devDependencies": {
-    "parcel": "2.0.0-beta.2",
+    "parcel": "latest",
     "rimraf": "^3.0.2",
     "standard": "^16.0.3",
     "test-ipfs-example": "^3.0.0"

@@ -9,7 +9,7 @@ const FILE_TYPES = {
   DIRECTORY: 'directory'
 }
 
-let selected = {}
+const selected = {}
 
 const getSelected = () => {
   return Object.values(selected)
@@ -41,7 +41,7 @@ const listFiles = (parent, files, prefix) => {
 
     if (file.type === FILE_TYPES.DIRECTORY) {
       parent.appendChild(createNode('pre', `${listing}/`))
-      let descender = '|'
+      const descender = '|'
       let directoryPrefix = `${prefix}${descender}   `
 
       if (lastFile) {
