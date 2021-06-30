@@ -2,11 +2,19 @@
 
 In this example, you will find a boilerplate you can use to guide yourself into bundling js-ipfs with [browserify](http://browserify.org/), so that you can use it in your own web app!
 
-## Clone repo and run the example
+## Before you start
+
+```console
+$ git clone https://github.com/ipfs/js-ipfs.git
+$ cd js-ipfs
+$ npm install
+$ npm run build
+```
+
+## Run the example
 
 ```bash
-> git clone https://github.com/ipfs/js-ipfs.git
-> cd js-ipfs/examples/browser-browserify
+> cd examples/browser-browserify
 > npm install
 > npm start
 ```
@@ -15,5 +23,5 @@ Now open your browser at `http://localhost:8888`
 
 You should see the following:
 
-![](https://ipfs.io/ipfs/QmNtpcWCEd6LjdPNfBFDaVZdD4jpgT8ZTAwoFJXKhYMJdo/1.png)
-![](https://ipfs.io/ipfs/QmNtpcWCEd6LjdPNfBFDaVZdD4jpgT8ZTAwoFJXKhYMJdo/2.png)
+![](./img/1.png)
+![](./img/2.png)

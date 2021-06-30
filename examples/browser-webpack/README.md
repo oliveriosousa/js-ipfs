@@ -17,7 +17,9 @@ $ npm run build
 
 Once the daemon is on, run the following command within this folder:
 
-```bash
+```console
+$ cd examples/browser-webpack
+$ npm install
 $ npm start
 ```
 
@@ -25,4 +27,4 @@ Now open your browser at `http://localhost:3000`
 
 You should see the following:
 
-![](https://ipfs.io/ipfs/QmZndNLRct3co7h1yVB72S4qfwAwbq7DQghCpWpVQ45jSi/1.png)
+![](./img/1.png)

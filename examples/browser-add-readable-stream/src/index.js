@@ -1,5 +1,6 @@
 'use strict'
 
+/* eslint-env browser */
 import Ipfs from 'ipfs'
 
 const main = async () => {

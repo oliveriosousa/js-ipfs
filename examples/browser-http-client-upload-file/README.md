@@ -1,6 +1,15 @@
 # Upload file to IPFS via browser using js-ipfs-http-client
 
-> In this example, you will find a simple React app to upload a file to IPFS via the browser using js-ipfs-http-client and Webpack.
+> In this example, you will find a simple React app to upload a file to IPFS via the browser using js-ipfs-http-client and Parcelqw.
+
+## Before you start
+
+```console
+$ git clone https://github.com/ipfs/js-ipfs.git
+$ cd js-ipfs
+$ npm install
+$ npm run build
+```
 
 ## Setup
 
@@ -18,11 +27,12 @@ A quick (and dirty way to get it done) is:
 > ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials "[\"true\"]"
 ```
 
-## Run this example
+## Run the example
 
 Once the daemon is on, run the following commands within this folder:
 
 ```bash
+> cd examples/browser-http-client-upload-file
 > npm install
 > npm start
 ```

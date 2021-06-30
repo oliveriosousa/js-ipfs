@@ -23,13 +23,9 @@ $ npm run build
 
 Navigate into this directory:
 
-```
+```console
 $ cd js-ipfs/examples/browser-mfs
-```
-
-In this directory run:
-
-```
+$ npm install
 $ npm start
 ```
 

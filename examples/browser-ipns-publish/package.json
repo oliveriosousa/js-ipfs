@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An example demonstrating publishing to IPNS in the browser",
   "private": true,
-  "main": "index.js",
+  "main": "dist/index.html",
   "scripts": {
     "clean": "rimraf ./dist ./.cache ./.parcel-cache",
     "test": "test-ipfs-example",
@@ -20,6 +20,7 @@
     "ipfs-utils": "^8.1.2",
     "ipns": "^0.12.0",
     "it-last": "^1.0.4",
+    "libp2p-websockets": "^0.15.9",
     "p-retry": "^4.2.0",
     "uint8arrays": "^2.1.3"
   },

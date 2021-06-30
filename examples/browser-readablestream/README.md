@@ -19,7 +19,9 @@ $ npm run build
 
 In this directory:
 
-```
+```console
+$ cd examples/browser-readablestream
+$ npm install
 $ npm start
 ```
 

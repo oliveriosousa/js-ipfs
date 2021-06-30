@@ -17,7 +17,6 @@ The fact that HLS content is just "a bunch of files" makes it a good choice for 
 The hls.js library ships with an HTTP based content loader only, but it's fortunately possible to configure custom content loaders as well, which is what makes IPFS streaming possible in this case. A loader implementation that fetches content using js-ipfs can be found [here](https://www.npmjs.com/package/hlsjs-ipfs-loader), and is easy to use on a regular HTML page:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/ipfs/dist/index.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <script src="https://cdn.jsdelivr.net/npm/hlsjs-ipfs-loader@0.1.2"></script>
 ```
@@ -50,14 +49,15 @@ $ npm run build
 
 ## Running the example
 
-*Note:* If you try to run the example straight from disk, some browsers (e.g Chrome) might, for security reasons, prevent some resources from loading correctly. To get around this, simply cd into the directory of this example and use http-server from npm:
+_Note:_ If you try to run the example straight from disk, some browsers (e.g Chrome) might, for security reasons, prevent some resources from loading correctly. To get around this, simply cd into the directory of this example and use http-server from npm:
 
 ```console
-$ npm install -g http-server
-$ http-server
+$ cd examples/browser-video-streaming
+$ npm install
+$ npm run build
 ```
 
-You should then be able to stream Big Buck Bunny by pointing your browser at http://localhost:8080.
+You should then be able to stream Big Buck Bunny by pointing your browser at http://localhost:1234.
 
 In addition to video streaming, plain audio streaming works fine as well. Simply use the same ffmpeg + ipfs procedure as described above, but with your audio file as input. You may also want to change the video tag to `audio` (video tags will play plain audio as well, but the player looks a bit strange).
 
