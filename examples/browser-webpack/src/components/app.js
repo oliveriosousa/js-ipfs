@@ -1,4 +1,3 @@
-'use strict'
 
 const React = require('react')
 const IPFS = require('ipfs')
@@ -35,7 +34,7 @@ class App extends React.Component {
     const { cid } = await node.add(stringToUse)
     this.setState({ addedFileHash: cid.toString() })
 
-    let bufs = []
+    const bufs = []
 
     for await (const buf of node.cat(cid)) {
       bufs.push(buf)
@@ -48,7 +47,7 @@ class App extends React.Component {
   render () {
     return (
       <div style={{ textAlign: 'center' }}>
-        <h1>Everything is working!</h1>
+        <h1>Everything is working asdsad!</h1>
         <p>Your ID is <strong>{this.state.id}</strong></p>
         <p>Your IPFS version is <strong>{this.state.agentVersion}</strong></p>
         <p>Your IPFS protocol version is <strong>{this.state.protocolVersion}</strong></p>
