@@ -1,8 +1,8 @@
 # Streaming video from IPFS using ReadableStreams
 
-We can use the excellent [`videostream`](https://www.npmjs.com/package/videostream) to stream video from IPFS to the browser.  All we need to do is return a [`ReadableStream`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)-like object that contains the requested byte ranges.
+We can use the excellent [`videostream`](https://www.npmjs.com/package/videostream) to stream video from IPFS to the browser. All we need to do is return a [`ReadableStream`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)-like object that contains the requested byte ranges.
 
-Take a look at [`index.js`](./index.js) to see a working example.
+Take a look at [`index.js`](./src/index.js) to see a working example.
 
 ## Before you start
 
@@ -23,4 +23,4 @@ In this directory:
 $ npm start
 ```
 
-Then open [http://localhost:8888](http://localhost:8888) in your browser.
+Then open [http://localhost:1234](http://localhost:1234) in your browser.
