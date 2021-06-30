@@ -5,7 +5,7 @@
   "version": "1.1.1",
   "private": true,
   "scripts": {
-    "serve": "http-server . -a 127.0.0.1 -p 8888",
+    "serve": "http-server ./public/ -a 127.0.0.1 -p 8888",
     "start": "npm run serve",
     "test": "test-ipfs-example"
   },
@@ -14,8 +14,5 @@
   "devDependencies": {
     "http-server": "^0.12.3",
     "test-ipfs-example": "^3.0.0"
-  },
-  "dependencies": {
-    "ipfs": "^0.55.4"
   }
 }

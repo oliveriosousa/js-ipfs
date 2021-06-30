@@ -19,6 +19,12 @@ $ npm install
 $ npm run build
 ```
 
-## Running the example
+## Run the example
 
-See `index.html` for a working example.
+```console
+> cd examples/browser-script-tag
+> npm install
+> npm run start
+```
+
+Now open your browser at `http://localhost:8888`
