@@ -2,7 +2,7 @@
 
 A minimal demonstration of how to use `js-ipfs` with `Vue`.
 
-![screenshot of the js ipfs node id info](./src/assets/ipfs-vue-screenshot.png)
+![screenshot of the js ipfs node id info](./img/ipfs-vue-screenshot.png)
 
 This project was bootstrapped with [Vue CLI](https://cli.vuejs.org/).
 
@@ -15,6 +15,14 @@ $ git clone https://github.com/ipfs/js-ipfs.git
 $ cd js-ipfs
 $ npm install
 $ npm run build
+```
+
+## Run the example
+
+```console
+> cd examples/browser-vue
+> npm install
+> npm start
 ```
 
 ### Compiles and hot-reloads for development

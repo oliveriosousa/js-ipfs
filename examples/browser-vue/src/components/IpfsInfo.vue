@@ -1,9 +1,8 @@
 <template>
   <div class="ipfs-info">
-    <img class="ipfs-logo" alt="IPFS logo" src="../assets/logo.svg" />
-    <h1>{{ status }}</h1>
-    <h2>ID: {{ id }}</h2>
-    <h2>Agent version: {{ agentVersion }}</h2>
+    <h3>{{ status }}</h3>
+    <h3>ID: {{ id }}</h3>
+    <h3>Agent version: {{ agentVersion }}</h3>
   </div>
 </template>
 
@@ -40,10 +39,3 @@ export default {
   }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.ipfs-logo {
-  height: 10rem;
-}
-</style>
