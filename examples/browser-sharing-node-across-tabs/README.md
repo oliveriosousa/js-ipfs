@@ -25,8 +25,7 @@ Now open your browser at `http://localhost:3000`
 
 You should see the following:
 
-![Screen Shot](./Screen Shot.png)
-
+![Screen Shot](./img/screenshot.png)
 
 ### Run tests
 
@@ -34,5 +33,4 @@ You should see the following:
 npm test
 ```
 
-
-[SharedWorker]:https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker
+[sharedworker]: https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker
