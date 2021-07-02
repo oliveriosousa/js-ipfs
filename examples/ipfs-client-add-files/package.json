@@ -5,10 +5,11 @@
   "main": "dist/index.html",
   "private": true,
   "scripts": {
-    "clean": "rimraf ./dist ./.cache ./.parcel-cache",
-    "build": "parcel build index.html --no-scope-hoist",
-    "start": "parcel index.html -p 8888",
-    "test": "test-ipfs-example"
+    "build": "parcel build public/index.html --dist-dir ./dist",
+    "serve": "parcel serve public/index.html",
+    "start": "npm run serve",
+    "test": "test-ipfs-example",
+    "clean": "rimraf ./dist ./.cache ./.parcel-cache"
   },
   "dependencies": {
     "ipfs-client": "^0.4.3"
