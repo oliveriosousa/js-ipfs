@@ -31,5 +31,4 @@ Now open your browser at `http://localhost:8888`
 
 You should see the following:
 
-![](https://ipfs.io/ipfs/QmZndNLRct3co7h1yVB72S4qfwAwbq7DQghCpWpVQ45jSi/1.png)
-
+![](./img/screenshot.png)
