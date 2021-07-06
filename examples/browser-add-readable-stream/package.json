@@ -5,7 +5,7 @@
   "main": "dist/index.html",
   "private": true,
   "scripts": {
-    "build": "parcel build public/index.html --dist-dir ./dist",
+    "build": "parcel build public/index.html --dist-dir ./dist --no-scope-hoist",
     "serve": "parcel serve public/index.html",
     "start": "npm run serve",
     "test": "test-ipfs-example",
@@ -14,7 +14,6 @@
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
-    "http-server": "^0.12.3",
     "parcel": "latest",
     "rimraf": "^3.0.2",
     "test-ipfs-example": "^3.0.0"

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "JavaScript implementation of the IPFS specification",
   "scripts": {
+    "oli": "npm run test -- --scope=example-browser-add-readable-stream --concurrency=1",
     "postinstall": "lerna bootstrap",
     "link": "lerna link",
     "reset": "lerna run clean && rimraf packages/*/node_modules examples/*/node_modules node_modules",
