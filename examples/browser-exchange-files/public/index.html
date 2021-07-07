@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="app.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../src/app.css" />
     <title>IPFS - Exchange Files</title>
+
+    <script src="../src/app.js" defer></script>
   </head>
 
   <body ondragover="event.preventDefault()">
     <header>
-      <img width=200 src="assets/ipfs-logo.svg" alt="IPFS" />
+      <img width="200" src="assets/ipfs-logo.svg" alt="IPFS" />
     </header>
 
     <main>
@@ -35,12 +40,16 @@
         <div>
           <h3>Workspace</h3>
           <div class="input-button">
-            <input id="workspace-input" type="text" placeholder="Enter workspace name" disabled />
+            <input
+              id="workspace-input"
+              type="text"
+              placeholder="Enter workspace name"
+              disabled
+            />
             <button id="workspace-btn" disabled>Join</button>
           </div>
         </div>
       </div>
-
 
       <div class="columns">
         <div id="peers" class="box disabled">
@@ -58,7 +67,12 @@
           <h2>Network Peers</h2>
 
           <div class="input-button">
-            <input id="multiaddr-input" type="text" placeholder="Multiaddr" disabled />
+            <input
+              id="multiaddr-input"
+              type="text"
+              placeholder="Multiaddr"
+              disabled
+            />
             <button id="peer-btn" disabled>Connect</button>
           </div>
 
@@ -72,7 +86,11 @@
           </table>
         </div>
 
-        <div id="files" class="box disabled" ondragover="event.preventDefault()">
+        <div
+          id="files"
+          class="box disabled"
+          ondragover="event.preventDefault()"
+        >
           <h2>Files</h2>
 
           <div class="input-button">
@@ -81,7 +99,7 @@
           </div>
 
           <div id="drag-container">
-            <img width=100 src="assets/upload.svg" alt="Upload" />
+            <img width="100" src="assets/upload.svg" alt="Upload" />
             <p><b>Drag &amp; drop</b> a file to upload it.</p>
           </div>
 
@@ -106,8 +124,5 @@
         </div>
       </div>
     </main>
-
-    <!-- The app bundled with IPFS -->
-    <script src="bundle.js"></script>
   </body>
 </html>

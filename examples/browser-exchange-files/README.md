@@ -1,35 +1,59 @@
-# Exchange files between the browser and other IPFS nodes
+<p align="center">
+  <a href="https://js.ipfs.io" title="JS IPFS">
+    <img src="https://ipfs.io/ipfs/Qme6KJdKcp85TYbLxuLV7oQzMiLremD7HMoXLZEmgo6Rnh/js-ipfs-sticker.png" alt="IPFS in JavaScript logo" width="244" />
+  </a>
+</p>
 
-This tutorial will help you exchange files between browser nodes and go-ipfs or js-ipfs nodes!
+<h3 align="center"><b>Exchange files</b></h3>
 
-**Note:** As `js-ipfs@0.41.x` currently doesn't support DHT peer discovery, the peer from which you are fetching data should be within the reach (local or in public IP) of the browser node.
+<p align="center">
+    <b><i>Exchange files between the browser and other IPFS nodes</i></b>
+    <br />
+    <br />
+    <img src="https://raw.githubusercontent.com/jlord/forkngo/gh-pages/badges/cobalt.png" width="200">
+    <br>
+    <a href="https://github.com/ipfs/js-ipfs/tree/master/docs">Explore the docs</a>
+    ·
+    <a href="https://codesandbox.io/">View Demo</a>
+    ·
+    <a href="https://github.com/ipfs/js-ipfs/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/ipfs/js-ipfs/issues">Request Feature</a>
+  </p>
 
-That being said, we will explain how to circumvent these caveats and once they are fixed, we'll update the tutorial as well.
+## Table of Contents
 
-## Application diagram
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [1. Install `go-ipfs` or `js-ipfs`](#1-install-go-ipfs-or-js-ipfs)
+  - [2. Make your daemons listen on WebSockets](#2-make-your-daemons-listen-on-websockets)
+  - [3. Start the app](#3-start-the-app)
+  - [4. Dial to a node using WebSockets (your desktop ones)](#4-dial-to-a-node-using-websockets-your-desktop-ones)
+  - [5. Transfer files between all of your nodes!](#5-transfer-files-between-all-of-your-nodes)
+- [Usage](#usage)
+  - [Exchange files between the browser and other IPFS nodes](#exchange-files-between-the-browser-and-other-ipfs-nodes)
+  - [Application diagram](#application-diagram)
+  - [Tutorial goal](#tutorial-goal)
+  - [Going to production?](#going-to-production)
+  - [Use your own `libp2p-webrtc-star` signaling server](#use-your-own-libp2p-webrtc-star-signaling-server)
+- [Documentation](#documentation)
+- [Contributing](#contributing)
+- [Want to hack on IPFS?](#want-to-hack-on-ipfs)
 
-The goal of this tutorial is to create a simple application with an IPFS node that dials to other instances using WebRTC, and at the same time dial and transfer files from a browser IPFS node using WebSockets as the transport.
+## About The Project
 
-```
-┌──────────────┐                ┌──────────────┐
-│   Browser    │ libp2p(WebRTC) │   Browser    │
-│              │◀──────────────▶│              │
-└──────────────┘                └──────────────┘
-       ▲                                  ▲
-       │WebSockets              WebSockets│
-       │        ┌──────────────┐          │
-       │        │   Desktop    │          │
-       └───────▶│   Terminal   │◀─────────┘
-                └──────────────┘
-```
+- Read the [docs](https://github.com/ipfs/js-ipfs/tree/master/docs)
+- Look into other [examples](https://github.com/ipfs/js-ipfs/tree/master/examples) to learn how to spawn an IPFS node in Node.js and in the Browser
+- Consult the [Core API docs](https://github.com/ipfs/js-ipfs/tree/master/docs/core-api) to see what you can do with an IPFS node
+- Visit https://dweb-primer.ipfs.io to learn about IPFS and the concepts that underpin it
+- Head over to https://proto.school to take interactive tutorials that cover core IPFS APIs
+- Check out https://docs.ipfs.io for tips, how-tos and more
+- See https://blog.ipfs.io for news and more
+- Need help? Please ask 'How do I?' questions on https://discuss.ipfs.io
 
-## Tutorial goal
-
-The goal of this tutorial is for you to have something like this in the end:
-
-![](img/goal.png)
-
-## Step-by-step instructions
+## Getting Started
 
 Here's what we are going to be doing:
 
@@ -42,18 +66,16 @@ Here's what we are going to be doing:
 
 Just follow the instructions below and it will be up and running in no time!
 
-## Before you start
+### Prerequisites
 
 First clone this repo, install dependencies in the project root and build the project.
 
 ```console
-$ git clone https://github.com/ipfs/js-ipfs.git
-$ cd js-ipfs
-$ npm install
-$ npm run bundle
+> git clone https://github.com/ipfs/js-ipfs.git
+> cd js-ipfs
+> npm install
+> npm run bundle
 ```
-
-## Running the example
 
 ### 1. Install `go-ipfs` or `js-ipfs`
 
@@ -179,7 +201,7 @@ Open another terminal window to find the websocket addresses that it is listenin
 
 It should look like this: `/ip4/127.0.0.1/tcp/4003/ws/ipfs/<your_peer_id>`.
 
-Copy and paste the *multiaddr* to connect to that peer:
+Copy and paste the _multiaddr_ to connect to that peer:
 
 ![](img/connect-1.png)
 
@@ -201,7 +223,7 @@ Now you can add files through the CLI with:
 > jsipfs add <file>
 ```
 
-Copy and paste the *multihash* and fetch the file in the browser!
+Copy and paste the _multihash_ and fetch the file in the browser!
 
 ![](img/fetch.png)
 
@@ -218,7 +240,40 @@ Now every file that you upload in one tab will appear in the other! You can even
 
 ![](img/pubsub.png)
 
-## Going to production?
+## Usage
+
+### Exchange files between the browser and other IPFS nodes
+
+This tutorial will help you exchange files between browser nodes and go-ipfs or js-ipfs nodes!
+
+**Note:** As `js-ipfs@0.41.x` currently doesn't support DHT peer discovery, the peer from which you are fetching data should be within the reach (local or in public IP) of the browser node.
+
+That being said, we will explain how to circumvent these caveats and once they are fixed, we'll update the tutorial as well.
+
+### Application diagram
+
+The goal of this tutorial is to create a simple application with an IPFS node that dials to other instances using WebRTC, and at the same time dial and transfer files from a browser IPFS node using WebSockets as the transport.
+
+```
+┌──────────────┐                ┌──────────────┐
+│   Browser    │ libp2p(WebRTC) │   Browser    │
+│              │◀──────────────▶│              │
+└──────────────┘                └──────────────┘
+       ▲                                  ▲
+       │WebSockets              WebSockets│
+       │        ┌──────────────┐          │
+       │        │   Desktop    │          │
+       └───────▶│   Terminal   │◀─────────┘
+                └──────────────┘
+```
+
+### Tutorial goal
+
+The goal of this tutorial is for you to have something like this in the end:
+
+![](img/goal.png)
+
+### Going to production?
 
 This example uses public webrtc-star servers. These servers should be used for experimenting and demos, they **MUST** not be used in production as there is no guarantee on availability.
 
@@ -232,7 +287,7 @@ First install the `libp2p-webrtc-star` module globally:
 > npm install -g libp2p-webrtc-star
 ```
 
-This will give you the `webrtc-star` command.  Use this to start a signaling server:
+This will give you the `webrtc-star` command. Use this to start a signaling server:
 
 ```sh
 > webrtc-star
@@ -241,3 +296,37 @@ This will give you the `webrtc-star` command.  Use this to start a signaling ser
 By default it will listen to all incoming connections on port 13579. Override this with the `--host` and/or `--port` options. That is, the following multiaddr: `/ip4/127.0.0.1/tcp/13579/wss/p2p-webrtc-star`.
 
 You should add your signaling server in the IPFS config swarm addresses, so that you listen for new connections through it.
+
+## Documentation
+
+- [Config](https://docs.ipfs.io/)
+- [Core API](https://github.com/ipfs/js-ipfs/tree/master/docs/core-api)
+- [Examples](https://github.com/ipfs/js-ipfs/tree/master/examples)
+- [Development](https://github.com/ipfs/js-ipfs/blob/master/docs/DEVELOPMENT.md)
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the IPFS Project
+2. Create your Feature Branch (`git checkout -b feature/amazing-feature`)
+3. Commit your Changes (`git commit -a -m 'feat: add some amazing feature'`)
+4. Push to the Branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## Want to hack on IPFS?
+
+[![](https://cdn.rawgit.com/jbenet/contribute-ipfs-gif/master/img/contribute.gif)](https://github.com/ipfs/community/blob/master/CONTRIBUTING.md)
+
+The IPFS implementation in JavaScript needs your help! There are a few things you can do right now to help out:
+
+Read the [Code of Conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md) and [JavaScript Contributing Guidelines](https://github.com/ipfs/community/blob/master/CONTRIBUTING_JS.md).
+
+- **Check out existing issues** The [issue list](https://github.com/ipfs/js-ipfs/issues) has many that are marked as ['help wanted'](https://github.com/ipfs/js-ipfs/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22help+wanted%22) or ['difficulty:easy'](https://github.com/ipfs/js-ipfs/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Adifficulty%3Aeasy) which make great starting points for development, many of which can be tackled with no prior IPFS knowledge
+- **Look at the [IPFS Roadmap](https://github.com/ipfs/roadmap)** This are the high priority items being worked on right now
+- **Perform code reviews** More eyes will help
+  a. speed the project along
+  b. ensure quality, and
+  c. reduce possible future bugs.
+- **Add tests**. There can never be enough tests.
+- **Join the [Weekly Core Implementations Call](https://github.com/ipfs/team-mgmt/issues/992)** it's where everyone discusses what's going on with IPFS and what's next
